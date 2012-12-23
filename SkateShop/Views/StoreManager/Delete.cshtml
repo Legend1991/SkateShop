@@ -1,21 +1,21 @@
 ﻿@model SkateShop.Models.Item
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Удалить товар";
 }
 
-<h2>Delete Confirmation</h2>
+<h2>Подтверждение удаления</h2>
 
-<p>Are you sure you want to delete the album titled 
+<p>Вы уверены что хотите удалить товар 
    <strong>@Model.Title</strong>?
 </p>
 
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" />
+        <input class="button" type="submit" value="Удалить" />
     </p>
     <p>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Назад к списку", "Index")
     </p>
 
 }

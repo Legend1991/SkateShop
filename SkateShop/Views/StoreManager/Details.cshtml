@@ -1,40 +1,35 @@
 ﻿@model SkateShop.Models.Item
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Детальная информация о товаре";
 }
 
-<h2>Details</h2>
+<h2>Детальная информация о товаре</h2>
 
 <fieldset>
-    <legend>Album</legend>
+    <legend>Товар</legend>
 
-    <div class="display-label">Genre</div>
+    <div class="display-label">Категория</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Category.Name)
     </div>
 
-    <div class="display-label">Artist</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Category.Name)
-    </div>
-
-    <div class="display-label">Title</div>
+    <div class="display-label">Название</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Title)
     </div>
 
-    <div class="display-label">Price</div>
+    <div class="display-label">Цена</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Price)
     </div>
 
-    <div class="display-label">AlbumArtUrl</div>
+    <div class="display-label">URL Фото</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ItemPhotoUrl)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ItemId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Редактировать", "Edit", new { id=Model.ItemId }) |
+    @Html.ActionLink("Назад к списку", "Index")
 </p>

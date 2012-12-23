@@ -1,7 +1,7 @@
 ﻿@model SkateShop.Models.Item
 
 @{
-    ViewBag.Title = "Album - " + Model.Title;
+    ViewBag.Title = Model.Title;
 }
 
 <h2>@Model.Title</h2>
@@ -12,15 +12,15 @@
 
 <div id="album-details">
     <p>
-        <em>Genre:</em>
+        <em>Категория:</em>
         @Model.Category.Name
     </p>
     <p>
-        <em>Price:</em>
+        <em>Цена:</em>
         @String.Format("{0:F}", Model.Price)
     </p>
     <p class="button">
-        @Html.ActionLink("Add to cart", "AddToCart", 
+        @Html.ActionLink("В корзину", "AddToCart", 
         "ShoppingCart", new { id = Model.ItemId }, "")
     </p>
 </div>

@@ -1,6 +1,6 @@
 ﻿@model SkateShop.ViewModels.ShoppingCartViewModel
 @{
-    ViewBag.Title = "Shopping Cart";
+    ViewBag.Title = "Корзина";
 }
 <script src="/Scripts/jquery-1.4.4.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -51,23 +51,23 @@
     }
 </script>
 <h3>
-    <em>Review</em> your cart:
+    Ваша корзина:
 </h3>
 <p class="button">
-    @Html.ActionLink("Checkout >>", "AddressAndPayment", "Checkout")
+    @Html.ActionLink("Оформить покупку >>", "AddressAndPayment", "Checkout")
 </p>
 <div id="update-message">
 </div>
 <table>
     <tr>
         <th>
-            Album Name
+            Товар
         </th>
         <th>
-            Price (each)
+            Цена (ед.)
         </th>
         <th>
-            Quantity
+            Количество
         </th>
         <th></th>
     </tr>
@@ -84,13 +84,13 @@
                 @item.Count
             </td>
             <td>
-                <a href="#" class="RemoveLink" data-id="@item.RecordId">Remove from cart</a>
+                <a href="#" class="RemoveLink" data-id="@item.RecordId">Удалить из корзины</a>
             </td>
         </tr>
     }
     <tr>
         <td>
-            Total
+            Всего
         </td>
         <td>
         </td>

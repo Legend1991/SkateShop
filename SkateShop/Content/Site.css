@@ -25,8 +25,8 @@ body
 	width: 100%;
 	/*border-bottom: 1px solid #5D5A53;*/
 	margin-bottom: 10px;
-    padding-bottom: 5px;
-    	background: url(/content/Images/logo.png) no-repeat;
+    padding-bottom: 20px;
+    background: url(/content/Images/logo.png) no-repeat;
 }
 
 #header h1
@@ -40,6 +40,12 @@ body
 #storename
 {
     margin-left: 100px;
+}
+
+#logindisplay
+{
+    text-align: left;
+    float: left;
 }
 
 #promotion
@@ -57,7 +63,7 @@ ul li a
 #main
 {
 	overflow: hidden;
-	padding: 20px 0 15px 10px;
+	padding: 0px 0 15px 10px;
 	/*float: left;*/
 }
 
@@ -121,6 +127,11 @@ ul#album-list li a span
 .button a
 {
 	color: #fff !important;
+}
+
+.button:hover
+{
+	background: #F6855E;
 }
 
 #footer
@@ -224,7 +235,6 @@ a:active
 	list-style-type: none;
 	/*border-right: #5d5a53 1px dotted;*/
 	padding-right: 10px;
-    padding-top: 20px;
 	margin: 0 25px 0 0;
 	float: left;
 }

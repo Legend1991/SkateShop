@@ -25,11 +25,11 @@ namespace SkateShop.Controllers
 
         private List<Item> GetTopSellingItems(int count)
         {
-            /*return storeDB.Items
+            return storeDB.Items
                 .OrderByDescending(a => a.OrderDetails.Count())
                 .Take(count)
-                .ToList();*/
-            return new List<Item>();
+                .ToList();
+            /*return new List<Item>();*/
         }
     }
 }
