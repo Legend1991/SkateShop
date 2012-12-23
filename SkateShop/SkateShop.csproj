@@ -119,7 +119,7 @@
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MvcMusicStore.sdf" />
+    <Content Include="App_Data\SkateShopDB.sdf" />
     <Content Include="Content\Images\home-showcase.jpg" />
     <Content Include="Content\Images\home-showcase.png" />
     <Content Include="Content\Images\logo.png" />

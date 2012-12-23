@@ -10,6 +10,7 @@ body
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	background-color: #dae6ff; /*#FBF9EF;*/
+    background-image: url(/content/Images/background.png);
 	padding: 0px 6%;
 }
 
@@ -22,7 +23,7 @@ body
 {
 	float: left;
 	width: 100%;
-	border-bottom: 1px solid #5D5A53;
+	/*border-bottom: 1px solid #5D5A53;*/
 	margin-bottom: 10px;
     padding-bottom: 5px;
     	background: url(/content/Images/logo.png) no-repeat;
@@ -45,7 +46,7 @@ body
 {
 	height: 300px; 
 	width: 700px; 
-	background: url(/content/Images/home-showcase.jpg) no-repeat;
+	background: url(/content/Images/home-showcase.png) no-repeat;
 }
 
 ul li a
@@ -90,7 +91,7 @@ ul#album-list li a, ul#album-list li .button
 
 ul#album-list li a span
 {
-	color: #9b9993;
+	color: #5E5B54;
 	text-decoration: underline;
 }
 
@@ -127,7 +128,7 @@ ul#album-list li a span
 	clear: both;
 	padding: 10px;
 	text-align: right;
-	border-top: 1px dotted #8A8575;
+	/*border-top: 1px dotted #8A8575;*/
 	/*border-bottom: 1px dotted #8A8575;*/
 	font-family: Constantia, Georgia, serif;
 }
@@ -148,7 +149,7 @@ ul#navlist li a
 	border-left: 1px dotted #8A8575;
 	padding: 10px;
 	margin-top: 10px;
-	color: #8A8575;
+	color: #5E5B54;
 	text-decoration: none;
 	float: left;
 }
@@ -186,7 +187,7 @@ h2, h3
 
 h3
 {
-	color: #9B9993;
+	color: #5E5B54;
 }
 
 #header h1 a, h3 em
@@ -221,7 +222,7 @@ a:active
 {
 	font-family: Constantia, Georgia, serif;
 	list-style-type: none;
-	border-right: #5d5a53 1px dotted;
+	/*border-right: #5d5a53 1px dotted;*/
 	padding-right: 10px;
 	margin: 0 25px 0 0;
 	float: left;
@@ -229,7 +230,7 @@ a:active
 
 #categories a:link, #categories a:visited
 {
-	color: #9B9993;
+	color: #5E5B54;
 	text-decoration: none;
 }
 
@@ -241,7 +242,7 @@ a:active
 div#album-details p
 {
 	margin-bottom: 5px;
-	color: #5e5b54;
+	color: #5E5B54;
 	font-weight: bold;
 }
 
