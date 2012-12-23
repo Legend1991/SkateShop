@@ -105,11 +105,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Album.cs" />
-    <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\Cart.cs" />
-    <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\MusicStoreEntities.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\SkateShopEntities.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\SampleData.cs" />
@@ -222,7 +221,7 @@
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\Store\Browse.cshtml" />
     <Content Include="Views\Store\Details.cshtml" />
-    <Content Include="Views\Store\GenreMenu.cshtml" />
+    <Content Include="Views\Store\CategoryMenu.cshtml" />
     <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\StoreManager\Create.cshtml" />

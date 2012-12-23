@@ -12,15 +12,15 @@ namespace SkateShop.Controllers
     [Authorize(Roles = "Administrator")]
     public class StoreManagerController: Controller
     {
-        private MusicStoreEntities db = new MusicStoreEntities();
+        private SkateShopEntities db = new SkateShopEntities();
 
         //
         // GET: /StoreManager/
 
         public ViewResult Index()
         {
-            var albums = db.Albums.Include(a => a.Genre).Include(a => a.Artist);
-            return View(albums.ToList());
+            var items = db.Items.Include(a => a.Category);
+            return View(items.ToList());
         }
 
         //
@@ -28,8 +28,8 @@ namespace SkateShop.Controllers
 
         public ViewResult Details(int id)
         {
-            Album album = db.Albums.Find(id);
-            return View(album);
+            Item item = db.Items.Find(id);
+            return View(item);
         }
 
         //
@@ -37,8 +37,7 @@ namespace SkateShop.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name");
-            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name");
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
             return View();
         }
 
@@ -46,18 +45,17 @@ namespace SkateShop.Controllers
         // POST: /StoreManager/Create
 
         [HttpPost]
-        public ActionResult Create(Album album)
+        public ActionResult Create(Item item)
         {
             if (ModelState.IsValid)
             {
-                db.Albums.Add(album);
+                db.Items.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
-            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
-            return View(album);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", item.CategoryId);
+            return View(item);
         }
 
         //
@@ -65,9 +63,8 @@ namespace SkateShop.Controllers
 
         public ActionResult Edit(int id)
         {
-            Album album = db.Albums.Find(id);
-            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
-            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
+            Item album = db.Items.Find(id);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", album.CategoryId);
             return View(album);
         }
 
@@ -75,17 +72,16 @@ namespace SkateShop.Controllers
         // POST: /StoreManager/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Album album)
+        public ActionResult Edit(Item item)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(album).State = EntityState.Modified;
+                db.Entry(item).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
-            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
-            return View(album);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", item.CategoryId);
+            return View(item);
         }
 
         //
@@ -93,8 +89,8 @@ namespace SkateShop.Controllers
 
         public ActionResult Delete(int id)
         {
-            Album album = db.Albums.Find(id);
-            return View(album);
+            Item item = db.Items.Find(id);
+            return View(item);
         }
 
         //
@@ -103,8 +99,8 @@ namespace SkateShop.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Album album = db.Albums.Find(id);
-            db.Albums.Remove(album);
+            Item item = db.Items.Find(id);
+            db.Items.Remove(item);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

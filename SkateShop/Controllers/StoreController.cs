@@ -9,14 +9,14 @@ namespace SkateShop.Controllers
 {
     public class StoreController: Controller
     {
-        MusicStoreEntities storeDB = new MusicStoreEntities();
+        SkateShopEntities storeDB = new SkateShopEntities();
 
         //
         // GET: /Store/
 
         public ActionResult Index()
         {
-            var genres = storeDB.Genres.ToList();
+            var genres = storeDB.Categories.ToList();
 
             return View(genres);
         }
@@ -24,13 +24,13 @@ namespace SkateShop.Controllers
         //
         // GET: /Store/Browse?genre=Disco
 
-        public ActionResult Browse(string genre)
+        public ActionResult Browse(string category)
         {
             // Retrieve Genre and its Associated Albums from database
-            var genreModel = storeDB.Genres.Include("Albums")
-                .Single(g => g.Name == genre);
+            var categoryModel = storeDB.Categories.Include("Items")
+                .Single(c => c.Name == category);
 
-            return View(genreModel);
+            return View(categoryModel);
         }
 
         //
@@ -38,20 +38,20 @@ namespace SkateShop.Controllers
 
         public ActionResult Details(int id)
         {
-            var album = storeDB.Albums.Find(id);
+            var item = storeDB.Items.Find(id);
 
-            return View(album);
+            return View(item);
         }
 
         //
         // GET: /Store/GenreMenu
 
         [ChildActionOnly]
-        public ActionResult GenreMenu()
+        public ActionResult CategoryMenu()
         {
-            var genres = storeDB.Genres.ToList();
+            var categories = storeDB.Categories.ToList();
 
-            return PartialView(genres);
+            return PartialView(categories);
         }
     }
 }

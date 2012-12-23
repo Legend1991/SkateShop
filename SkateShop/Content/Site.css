@@ -57,7 +57,7 @@ ul li a
 #main
 {
 	overflow: hidden;
-	padding: 0 0 15px 10px;
+	padding: 20px 0 15px 10px;
 	/*float: left;*/
 }
 
@@ -76,7 +76,7 @@ ul#album-list
 
 ul#album-list li
 {
-	height: 130px;
+	height: 150px;
 	width: 100px;
 	float: left;
 	margin: 10px;
@@ -224,6 +224,7 @@ a:active
 	list-style-type: none;
 	/*border-right: #5d5a53 1px dotted;*/
 	padding-right: 10px;
+    padding-top: 20px;
 	margin: 0 25px 0 0;
 	float: left;
 }

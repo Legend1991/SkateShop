@@ -8,19 +8,16 @@ using System.Web.Mvc;
 
 namespace SkateShop.Models
 {
-    [Bind(Exclude = "AlbumId")]
-    public class Album
+    [Bind(Exclude = "ItemId")]
+    public class Item
     {
         [ScaffoldColumn(false)]
-        public int AlbumId { get; set; }
+        public int ItemId { get; set; }
 
-        [DisplayName("Genre")]
-        public int GenreId { get; set; }
+        [DisplayName("Category")]
+        public int CategoryId { get; set; }
 
-        [DisplayName("Artist")]
-        public int ArtistId { get; set; }
-
-        [Required(ErrorMessage = "An Album Title is required")]
+        [Required(ErrorMessage = "An Item Title is required")]
         [StringLength(160)]
         public string Title { get; set; }
 
@@ -29,12 +26,11 @@ namespace SkateShop.Models
             ErrorMessage = "Price must be between 0.01 and 100.00")]
         public decimal Price { get; set; }
 
-        [DisplayName("Album Art URL")]
+        [DisplayName("Item Photo URL")]
         [StringLength(1024)]
-        public string AlbumArtUrl { get; set; }
+        public string ItemPhotoUrl { get; set; }
 
-        public virtual Genre Genre { get; set; }
-        public virtual Artist Artist { get; set; }
+        public virtual Category Category { get; set; }
         public virtual List<OrderDetail> OrderDetails { get; set; }
     }
 }

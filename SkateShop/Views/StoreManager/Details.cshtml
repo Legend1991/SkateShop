@@ -1,4 +1,4 @@
-﻿@model SkateShop.Models.Album
+﻿@model SkateShop.Models.Item
 
 @{
     ViewBag.Title = "Details";
@@ -11,12 +11,12 @@
 
     <div class="display-label">Genre</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Genre.Name)
+        @Html.DisplayFor(model => model.Category.Name)
     </div>
 
     <div class="display-label">Artist</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Artist.Name)
+        @Html.DisplayFor(model => model.Category.Name)
     </div>
 
     <div class="display-label">Title</div>
@@ -31,10 +31,10 @@
 
     <div class="display-label">AlbumArtUrl</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.AlbumArtUrl)
+        @Html.DisplayFor(model => model.ItemPhotoUrl)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.AlbumId }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ItemId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

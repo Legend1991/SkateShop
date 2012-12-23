@@ -8,7 +8,7 @@ namespace SkateShop.Models
 {
     public partial class ShoppingCart
     {
-        MusicStoreEntities storeDB = new MusicStoreEntities();
+        SkateShopEntities storeDB = new SkateShopEntities();
 
         string ShoppingCartId { get; set; }
 
@@ -27,19 +27,19 @@ namespace SkateShop.Models
             return GetCart(controller.HttpContext);
         }
 
-        public void AddToCart(Album album)
+        public void AddToCart(Item item)
         {
             // Get the matching cart and album instances
             var cartItem = storeDB.Carts.SingleOrDefault(
 c => c.CartId == ShoppingCartId
-&& c.AlbumId == album.AlbumId);
+&& c.ItemId == item.ItemId);
 
             if (cartItem == null)
             {
                 // Create a new cart item if no cart item exists
                 cartItem = new Cart
                 {
-                    AlbumId = album.AlbumId,
+                    ItemId = item.ItemId,
                     CartId = ShoppingCartId,
                     Count = 1,
                     DateCreated = DateTime.Now
@@ -121,7 +121,7 @@ cart => cart.CartId == ShoppingCartId
             // sum all album price totals to get the cart total
             decimal? total = (from cartItems in storeDB.Carts
                               where cartItems.CartId == ShoppingCartId
-                              select (int?)cartItems.Count * cartItems.Album.Price).Sum();
+                              select (int?)cartItems.Count * cartItems.Item.Price).Sum();
             return total ?? decimal.Zero;
         }
 
@@ -136,14 +136,14 @@ cart => cart.CartId == ShoppingCartId
             {
                 var orderDetail = new OrderDetail
                 {
-                    AlbumId = item.AlbumId,
+                    ItemId = item.ItemId,
                     OrderId = order.OrderId,
-                    UnitPrice = item.Album.Price,
+                    UnitPrice = item.Item.Price,
                     Quantity = item.Count
                 };
 
                 // Set the order total of the shopping cart
-                orderTotal += (item.Count * item.Album.Price);
+                orderTotal += (item.Count * item.Item.Price);
 
                 storeDB.OrderDetails.Add(orderDetail);
 

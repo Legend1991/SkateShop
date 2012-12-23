@@ -1,4 +1,4 @@
-﻿@model List<SkateShop.Models.Album>
+﻿@model List<SkateShop.Models.Item>
 @{
     ViewBag.Title = "Skate Shop";
 }
@@ -8,13 +8,13 @@
 <h3><em>Популярные</em> товары</h3>
 
 <ul id="album-list">
-    @foreach (var album in Model)
+    @foreach (var item in Model)
     {
         <li><a href="@Url.Action("Details", "Store",
-                new { id = album.AlbumId })">
+                new { id = item.ItemId })">
 
-            <img alt="@album.Title" src="@album.AlbumArtUrl" />
-            <span>@album.Title</span> </a>
+            <img alt="@item.Title" src="@item.ItemPhotoUrl" />
+            <span>@item.Title</span> </a>
         </li>
     }
 </ul>

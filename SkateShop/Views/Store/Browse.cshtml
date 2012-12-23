@@ -1,4 +1,4 @@
-﻿@model SkateShop.Models.Genre
+﻿@model SkateShop.Models.Category
  
 @{
     ViewBag.Title = "Browse Albums";
@@ -8,12 +8,12 @@
     <h3><em>@Model.Name</em> Albums</h3>
  
     <ul id="album-list">
-        @foreach (var album in Model.Albums)
+        @foreach (var item in Model.Items)
         {
             <li>
-                <a href="@Url.Action("Details", new { id = album.AlbumId })">
-                    <img alt="@album.Title" src="@album.AlbumArtUrl" />
-                    <span>@album.Title</span>
+                <a href="@Url.Action("Details", new { id = item.ItemId })">
+                    <img alt="@item.Title" src="@item.ItemPhotoUrl" />
+                    <span>@item.Title</span>
                 </a>
             </li>
         }

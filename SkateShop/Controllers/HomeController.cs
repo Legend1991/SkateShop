@@ -9,13 +9,13 @@ namespace SkateShop.Controllers
 {
     public class HomeController : Controller
     {
-        MusicStoreEntities storeDB = new MusicStoreEntities();
+        SkateShopEntities storeDB = new SkateShopEntities();
 
         public ActionResult Index()
         {
-            var albums = GetTopSellingAlbums(5);
+            var items = GetTopSellingItems(5);
 
-            return View(albums);
+            return View(items);
         }
 
         public ActionResult About()
@@ -23,12 +23,13 @@ namespace SkateShop.Controllers
             return View();
         }
 
-        private List<Album> GetTopSellingAlbums(int count)
+        private List<Item> GetTopSellingItems(int count)
         {
-            return storeDB.Albums
+            /*return storeDB.Items
                 .OrderByDescending(a => a.OrderDetails.Count())
                 .Take(count)
-                .ToList();
+                .ToList();*/
+            return new List<Item>();
         }
     }
 }

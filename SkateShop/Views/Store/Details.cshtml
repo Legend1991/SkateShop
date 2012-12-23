@@ -1,4 +1,4 @@
-﻿@model SkateShop.Models.Album
+﻿@model SkateShop.Models.Item
 
 @{
     ViewBag.Title = "Album - " + Model.Title;
@@ -7,17 +7,13 @@
 <h2>@Model.Title</h2>
 
 <p>
-    <img alt="@Model.Title" src="@Model.AlbumArtUrl" />
+    <img alt="@Model.Title" src="@Model.ItemPhotoUrl" />
 </p>
 
 <div id="album-details">
     <p>
         <em>Genre:</em>
-        @Model.Genre.Name
-    </p>
-    <p>
-        <em>Artist:</em>
-        @Model.Artist.Name
+        @Model.Category.Name
     </p>
     <p>
         <em>Price:</em>
@@ -25,6 +21,6 @@
     </p>
     <p class="button">
         @Html.ActionLink("Add to cart", "AddToCart", 
-        "ShoppingCart", new { id = Model.AlbumId }, "")
+        "ShoppingCart", new { id = Model.ItemId }, "")
     </p>
 </div>

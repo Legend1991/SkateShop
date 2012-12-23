@@ -9,7 +9,7 @@ namespace SkateShop.Controllers
     [Authorize]
     public class CheckoutController: Controller
     {
-        MusicStoreEntities storeDB = new MusicStoreEntities();
+        SkateShopEntities storeDB = new SkateShopEntities();
         const string PromoCode = "FREE";
 
         //

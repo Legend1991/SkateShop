@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SkateShop.Models.Genre>
+﻿@model IEnumerable<SkateShop.Models.Category>
 @{
     ViewBag.Title = "Store";
 }
@@ -7,8 +7,8 @@
 <p>
     Select from @Model.Count() genres:</p>
 <ul>
-    @foreach (var genre in Model)
+    @foreach (var category in Model)
     {
-        <li>@Html.ActionLink(genre.Name, "Browse", new { genre = genre.Name })</li>
+        <li>@Html.ActionLink(category.Name, "Browse", new { category = category.Name })</li>
     }
 </ul>
